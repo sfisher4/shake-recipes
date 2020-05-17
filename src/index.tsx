@@ -6,7 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import { AddRecipe } from './components/AddRecipe'
 
 ReactDOM.render(
+  <>
   <AddRecipe recipe={ {title: "",  ingredients:"", instructions:""} }/>,
+  </>,
   document.getElementById('root')
 );
 

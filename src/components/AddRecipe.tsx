@@ -16,7 +16,7 @@ type HTMLFormControls = HTMLInputElement | HTMLSelectElement | HTMLTextAreaEleme
 
 export const AddRecipe: FC<AddRecipeProps> = (props) => {
 
-  const [recipeForm, setRecipeForm ] = useState<RecipeFormState> ({
+  const [ recipeForm, setRecipeForm ] = useState<RecipeFormState> ({
     title: "",
     ingredients: "",
     instructions: "",
@@ -26,7 +26,7 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
     const value = event.target.value;
     setRecipeForm({
       ...recipeForm,
-      [event.target.name]: value
+      [ event.target.name ]: value
     })
   }
 
@@ -48,7 +48,7 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
         <div>
           <label htmlFor="ingredients-input">Ingredients: </label>
           <input 
-            type="text" 
+            type="textarea" 
             id="ingredients-input"
             name="ingredients"
             value={ recipeForm.ingredients } 
@@ -58,7 +58,7 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
         <div>
           <label htmlFor="instructions-input">Instructions: </label>
           <input 
-            type="text" 
+            type="textarea"
             id="instructions-input"
             name="instructions"
             value={ recipeForm.instructions } 
