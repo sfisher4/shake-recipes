@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import { AddRecipe } from './components/AddRecipe'
+import { RecipeDetails } from './components/RecipeDetails';
 
 ReactDOM.render(
   <>
-  <AddRecipe recipe={ {title: "",  ingredients:"", instructions:""} }/>,
+    <RecipeDetails recipe={{ title: '', ingredients: '', instructions: '' }} />
   </>,
   document.getElementById('root')
 );
