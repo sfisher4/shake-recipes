@@ -47,8 +47,7 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
         </div>
         <div>
           <label htmlFor="ingredients-input">Ingredients: </label>
-          <input 
-            type="textarea" 
+          <textarea 
             id="ingredients-input"
             name="ingredients"
             value={ recipeForm.ingredients } 
@@ -57,8 +56,7 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
         </div>
         <div>
           <label htmlFor="instructions-input">Instructions: </label>
-          <input 
-            type="textarea"
+          <textarea 
             id="instructions-input"
             name="instructions"
             value={ recipeForm.instructions } 
