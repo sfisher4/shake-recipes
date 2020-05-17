@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { AddRecipe } from './components/AddRecipe'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+  <AddRecipe recipe={ {title: "",  ingredients:"", instructions:""} }/>,
+  </>,
   document.getElementById('root')
 );
 
