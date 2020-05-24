@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import 'react-tabs/style/react-tabs.css';
 
-import { RecipeDetails } from './components/RecipeDetails';
+import { App } from './components/App';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
-  <>
-    <RecipeDetails recipe={{ title: '', ingredients: '', instructions: '' }} />
-  </>,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 
