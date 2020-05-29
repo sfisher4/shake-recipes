@@ -1,4 +1,5 @@
 import React, { FC, useState, ChangeEvent, FormEvent } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { IRecipe } from '../models/IRecipe';
 
@@ -40,6 +41,7 @@ export const AddEditRecipe: FC<AddEditRecipeProps> = ({ onSubmit }) => {
 
     if (onSubmit) {
       onSubmit({
+        id: uuidv4(),
         title: recipeForm.title,
         ingredients: recipeForm.ingredients,
         instructions: recipeForm.instructions,

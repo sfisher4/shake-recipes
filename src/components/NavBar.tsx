@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavItem from 'react-bootstrap/NavItem';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 
-// TODO: Make the linkcontainer follow the same style as react
+// TODO: Make the linkcontainer follow the same style as react bootstrap navbar
 
 export const NavBar = () => (
   <Navbar bg="dark" variant="dark" expand="lg">
@@ -22,7 +22,7 @@ export const NavBar = () => (
           <NavItem event-key={1}>Add Recipe</NavItem>
         </LinkContainer>
         <LinkContainer to="/browse" activeStyle={{ fontWeight: 'bold' }}>
-          <NavItem event-key={2}>Browse Recipes </NavItem>
+          <NavItem event-key={2}>Browse Recipes</NavItem>
         </LinkContainer>
       </Nav>
     </Collapse>
