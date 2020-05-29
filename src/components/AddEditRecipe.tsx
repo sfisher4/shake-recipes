@@ -1,10 +1,10 @@
 import React, { FC, useState, ChangeEvent, FormEvent } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { IRecipe } from '../models/IRecipe';
 
-export interface AddRecipeProps {
-  recipe: IRecipe;
-  onSubmit?: (recipe: IRecipe) => void;
+export interface AddEditRecipeProps {
+  onSubmit?: (Recipe: IRecipe) => void;
 }
 
 export interface RecipeFormState {
@@ -15,7 +15,7 @@ export interface RecipeFormState {
 
 type HTMLFormControls = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
-export const AddRecipe: FC<AddRecipeProps> = (props) => {
+export const AddEditRecipe: FC<AddEditRecipeProps> = ({ onSubmit }) => {
   const [recipeForm, setRecipeForm] = useState<RecipeFormState>({
     title: '',
     ingredients: '',
@@ -32,10 +32,22 @@ export const AddRecipe: FC<AddRecipeProps> = (props) => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    props.onSubmit && props.onSubmit({ ...recipeForm });
-  };
 
-  console.log(recipeForm);
+    setRecipeForm({
+      title: '',
+      ingredients: '',
+      instructions: '',
+    });
+
+    if (onSubmit) {
+      onSubmit({
+        id: uuidv4(),
+        title: recipeForm.title,
+        ingredients: recipeForm.ingredients,
+        instructions: recipeForm.instructions,
+      });
+    }
+  };
 
   return (
     <>
