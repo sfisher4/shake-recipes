@@ -14,7 +14,6 @@ export const App = () => {
   const addRecipe = (recipe: IRecipe) => {
     setRecipes(
       recipes.concat({
-        id: Math.max(...(recipes.map((c) => c.id) as []), 0) + 1,
         ...recipe,
       })
     );
