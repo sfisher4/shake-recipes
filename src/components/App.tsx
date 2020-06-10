@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { IRecipe } from '../models/IRecipe';
 import { AddEditRecipe } from './AddEditRecipe';
-// import { ViewRecipe } from './ViewRecipe';
+import { ViewRecipe } from './ViewRecipe';
 import { BrowseRecipes } from './BrowseRecipes';
 import { NavBar } from '../components/NavBar';
 
@@ -26,13 +26,16 @@ export const App = () => {
     <>
       <NavBar />
       <Switch>
-        <Route path="/add">
+        <Route path="/recipe/add">
           <AddEditRecipe onSubmit={addRecipe} />{' '}
         </Route>
-        <Route path="/browse">
+        <Route path="/recipes">
           <BrowseRecipes recipes={recipes} />{' '}
         </Route>
-        <Redirect from="/" to="/add" />
+        <Route path={`/recipe/:recipeId`}>
+          <ViewRecipe recipes={recipes} />
+        </Route>
+        <Redirect from="/" to="recipe/add" />
       </Switch>
     </>
   );

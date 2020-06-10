@@ -1,20 +1,16 @@
 import React, { FC } from 'react';
-import { useRouteMatch, Route, Switch } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import CardDeck from 'react-bootstrap/CardDeck';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { IRecipe } from '../models/IRecipe';
-import { ViewRecipe } from './ViewRecipe';
 
 export interface BrowseRecipesProps {
   recipes: IRecipe[];
 }
 
 export const BrowseRecipes: FC<BrowseRecipesProps> = ({ recipes }) => {
-  let { path, url } = useRouteMatch();
-
   return (
     <div className="Browse">
       <label htmlFor="title-values">Recipes: </label>
@@ -26,19 +22,13 @@ export const BrowseRecipes: FC<BrowseRecipesProps> = ({ recipes }) => {
             <Card.Body>
               <Card.Title>{recipe.title}</Card.Title>
               <Card.Text>We can insert some print here if we wanted</Card.Text>
-              <LinkContainer to={`${url}/${recipe.id}`}>
+              <LinkContainer to={`/recipe/${recipe.id}`}>
                 <Button event-key={1}>View Recipe: {recipe.title}</Button>
               </LinkContainer>
             </Card.Body>
           </Card>
         ))}
       </CardDeck>
-
-      <Switch>
-        <Route path={`${path}/:recipeId`}>
-          <ViewRecipe recipes={recipes} />
-        </Route>
-      </Switch>
     </div>
   );
 };

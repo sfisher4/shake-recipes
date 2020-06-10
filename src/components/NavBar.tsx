@@ -18,10 +18,10 @@ export const NavBar = () => (
     <Toggle aria-controls="basic-navbar-nav" />
     <Collapse id="basic-navbar-nav">
       <Nav className="main-nav">
-        <LinkContainer to="/add" activeStyle={{ fontWeight: 'bold' }}>
+        <LinkContainer to="/recipe/add" activeStyle={{ fontWeight: 'bold' }}>
           <NavItem event-key={1}>Add Recipe</NavItem>
         </LinkContainer>
-        <LinkContainer to="/browse" activeStyle={{ fontWeight: 'bold' }}>
+        <LinkContainer to="/recipes" activeStyle={{ fontWeight: 'bold' }}>
           <NavItem event-key={2}>Browse Recipes</NavItem>
         </LinkContainer>
       </Nav>
