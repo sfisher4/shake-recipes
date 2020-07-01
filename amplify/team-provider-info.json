@@ -1,0 +1,25 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-shakerecipes-dev-163007-authRole",
+            "UnauthRoleArn": "arn:aws:iam::651197499815:role/amplify-shakerecipes-dev-163007-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::651197499815:role/amplify-shakerecipes-dev-163007-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-shakerecipes-dev-163007-deployment",
+            "UnauthRoleName": "amplify-shakerecipes-dev-163007-unauthRole",
+            "StackName": "amplify-shakerecipes-dev-163007",
+            "StackId": "arn:aws:cloudformation:us-west-2:651197499815:stack/amplify-shakerecipes-dev-163007/6cb9aab0-bbea-11ea-9c8d-0a2c4898daa4",
+            "AmplifyAppId": "d93mj7le1hq9a"
+        },
+        "categories": {
+            "function": {
+                "shakePostConfirmation": {
+                    "GROUP": "shakeinsiders"
+                }
+            },
+            "auth": {
+                "shake": {}
+            }
+        }
+    }
+}

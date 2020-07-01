@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import { IRecipe } from '../models/IRecipe';
 import { AddEditRecipe } from './AddEditRecipe';
 import { ViewRecipe } from './ViewRecipe';
 import { BrowseRecipes } from './BrowseRecipes';
 import { NavBar } from '../components/NavBar';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
-export const App = () => {
+const App = () => {
   const [recipes, setRecipes] = useState<IRecipe[]>([]);
 
   const addRecipe = (recipe: IRecipe) => {
@@ -23,7 +24,7 @@ export const App = () => {
   console.log(recipes);
 
   return (
-    <>
+    <Router>
       <NavBar />
       <Switch>
         <Route path="/recipe/add">
@@ -37,6 +38,8 @@ export const App = () => {
         </Route>
         <Redirect from="/" to="recipe/add" />
       </Switch>
-    </>
+    </Router>
   );
 };
+
+export default withAuthenticator(App);
